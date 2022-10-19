@@ -1,8 +1,7 @@
-import { Navigate } from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
 import About from "@/view/About";
 import Home from "@/view/home";
-
-
+import User from "@/view/User";
 
 
 const routes = [
@@ -12,13 +11,18 @@ const routes = [
     },
     {
         path: "/home",
-        element: <Home/>
+        element: <Home/>,
+        children: [
+            {
+                path: "/home/user",
+                element: <User/>
+            },
+            {
+                path: "/home/about",
+                element: <About/>
+            },
+        ]
     },
-    {
-        path: "/about",
-        element: <About/>
-    },
-
 
 
 ]
