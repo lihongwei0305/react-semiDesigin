@@ -9,10 +9,12 @@ const Home = () => {
             <div className={s.home}>
                 <SlideBar></SlideBar>
                 <div className={s.content}>
-                    <div className={s.header}>
+                    <div className={s.content_header}>
                         nav
                     </div>
-                    <Outlet/>
+                    <div className={s.content_wrapper}>
+                        <Outlet/>
+                    </div>
                 </div>
             </div>
         </>
