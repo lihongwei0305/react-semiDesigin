@@ -1,5 +1,6 @@
 import React from 'react'
 import {createRoot} from 'react-dom/client'
+import '../mock/index'
 
 import {BrowserRouter, createBrowserRouter, RouterProvider} from 'react-router-dom'
 import './index.css'
