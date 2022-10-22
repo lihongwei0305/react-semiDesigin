@@ -2,7 +2,7 @@ import {getUser} from '@/api/user'
 import {useEffect, useRef, useState} from "react";
 import {Table} from "@douyinfe/semi-ui";
 const { Column } = Table;
-
+import s from './index.module.scss'
 
 const About = () => {
     const renderRef = useRef(true)
@@ -12,6 +12,8 @@ const About = () => {
         pageSize: 20,
         showSizeChanger:true,
         pagination:[50,100,150,200],
+        style:{
+        },
 
     }
 
@@ -34,7 +36,7 @@ const About = () => {
     }, [])
 
     return (
-        <div>
+        <div className={s.container}>
             <Table dataSource={data} pagination={pagination} scroll={scroll} style={{ marginBottom: 12 }}>
                 <Column title="名字" dataIndex="name" key="name"/>
                 <Column title="年龄" dataIndex="age" key="age"/>

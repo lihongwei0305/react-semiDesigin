@@ -11,10 +11,10 @@
     height: 60px;
     background-color: #f0f0f0;
   }
-  //&_wrapper{
-  //  height: calc(100% - 60px);
-  //  overflow: hidden;
-  //}
+  &_wrapper{
+    height: calc(100% - 60px);
+    overflow: hidden;
+  }
 
 }
 

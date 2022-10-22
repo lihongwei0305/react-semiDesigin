@@ -1,5 +1,4 @@
-body,
-html{
+body{
   margin: 0;
 }
 
@@ -22,4 +21,9 @@ html{
 ::-webkit-scrollbar-track {
   border-radius: 10px; //滚动条的背景区域的圆角
   background: #fff; //滚动条的背景颜色
+}
+
+// 分页 下拉选择页数
+.semi-portal{
+  position: fixed !important;
 }
