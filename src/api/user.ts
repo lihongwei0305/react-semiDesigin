@@ -1,9 +1,10 @@
 import request from '@/request/index'
 
-export function getUser() {
+export function getUser(data:any) {
     return request({
         url: '/user/list',
-        method: 'get'
+        method: 'get',
+        data,
     })
 }
 
