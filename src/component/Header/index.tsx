@@ -2,11 +2,11 @@ import {Space, Tag, TagGroup} from "@douyinfe/semi-ui";
 import {observer} from 'mobx-react-lite'
 import menuStore from '@/store/menuStore'
 import React, {ReactPropTypes, useMemo, useState} from "react";
-import {Navigation} from "react-router-dom";
+import {NavigateFunction} from "react-router-dom";
 
 
 interface Props {
-    navigate: Navigation
+    navigate: NavigateFunction
 }
 
 const Header: React.FC<Props> = ({navigate}) => {

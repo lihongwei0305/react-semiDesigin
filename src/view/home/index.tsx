@@ -2,12 +2,12 @@ import SlideBar from "@/component/SlideBar/index";
 import Header from "@/component/Header";
 import {Button} from "@douyinfe/semi-ui";
 import s from './index.module.scss'
-import {Outlet, Route, Routes} from "react-router-dom";
+import {Navigation, Outlet, Route, Routes} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 
 
 const Home = () => {
-    let navigate = useNavigate()
+    let navigate:any = useNavigate()
     return (
         <>
             <div className={s.home}>

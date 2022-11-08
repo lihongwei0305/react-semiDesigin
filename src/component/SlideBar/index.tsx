@@ -3,13 +3,13 @@ import {Nav} from '@douyinfe/semi-ui';
 import {IconUser, IconStar, IconSetting} from '@douyinfe/semi-icons';
 import s from './index.module.scss'
 import menu from "@/component/SlideBar/menu";
-import {Navigation} from "react-router-dom";
+import {Navigation, NavigateFunction} from "react-router-dom";
 import {observer} from 'mobx-react-lite'
 import menuStore from "@/store/menuStore";
 
 
 interface Props {
-    navigate: Navigation
+    navigate: NavigateFunction
 }
 
 
