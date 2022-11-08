@@ -1,14 +1,15 @@
 import {Space, Tag, TagGroup} from "@douyinfe/semi-ui";
 import {observer} from 'mobx-react-lite'
 import menuStore from '@/store/menuStore'
-import {useMemo, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import React, {ReactPropTypes, useMemo, useState} from "react";
+import {Navigation} from "react-router-dom";
 
 
-const Header = () => {
-    const navigate = useNavigate()
+interface Props {
+    navigate: Navigation
+}
 
-
+const Header: React.FC<Props> = ({navigate}) => {
     return (
         <div>
             <Space>
@@ -18,11 +19,9 @@ const Header = () => {
                         key={v.tagKey}
                         closable={true}
                         onClick={() => {
-                            menuStore.setActiveMenu(v.tagKey)
-                            navigate(v.tagKey)
-                         }
-                        }
-                        onClose={() => menuStore.deleteMenu(v.tagKey)}>{v.children}
+                            menuStore.setActiveMenu(v.tagKey, navigate)
+                        }}
+                        onClose={() => menuStore.deleteMenu(v.tagKey,navigate)}>{v.children}
                     </Tag>
                 })}
             </Space>

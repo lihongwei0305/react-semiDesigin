@@ -1,4 +1,5 @@
 import {makeAutoObservable} from 'mobx'
+import {Navigation} from "react-router-dom";
 
 
 const store = makeAutoObservable({
@@ -15,22 +16,24 @@ const store = makeAutoObservable({
         store.selectedKeys = [tagKey]
     },
 
-    setMenu: (data: any) => {
+    setMenu: (data: any,navigate:Navigation) => {
         if (store.findIndex(data.tagKey) === -1) {
             store.menu.push(data);
         }
         store.setSelectedKeys(data.tagKey)
-        store.setActiveMenu(data.tagKey)
+        store.setActiveMenu(data.tagKey,navigate)
     },
-    setActiveMenu: (tagKey: string) => {
+    setActiveMenu: (tagKey: string, navigate: Navigation) => {
         store.menu.forEach((v: any) => {
             v.color = v.tagKey === tagKey ? 'green' : 'white'
         })
         store.setSelectedKeys(tagKey)
+        navigate(tagKey)
     },
-    deleteMenu: (tagKey: string) => {
+    deleteMenu: (tagKey: string,navigate:Navigation) => {
         if (store.findIndex(tagKey) === -1) return
         store.menu.splice(store.findIndex(tagKey), 1)
+        store.setMenu(store.menu.at(-1),navigate)
     }
 })
 
