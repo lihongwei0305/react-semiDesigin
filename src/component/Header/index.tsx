@@ -19,7 +19,7 @@ const Header: React.FC<Props> = ({navigate}) => {
                         key={v.tagKey}
                         closable={v.closable}
                         onClick={() => {
-                            menuStore.setActiveMenu(v.tagKey, navigate)
+                            menuStore.setTagActive(v.tagKey, navigate)
                         }}
                         onClose={() => menuStore.deleteMenu(v.tagKey,navigate)}>{v.children}
                     </Tag>

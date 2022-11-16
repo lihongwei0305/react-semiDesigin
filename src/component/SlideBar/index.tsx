@@ -16,13 +16,13 @@ interface Props {
 
 const SlideBar: React.FC<Props> = ({navigate}) => {
     useEffect(()=>{
-        menuStore.setSelectedKeys("/home/homePage")
-        menuStore.setDefaultMenu(menu,'/home/homePage',navigate)
+        menuStore.setMenuSelectedKeys("/home/homePage")
+        menuStore.setTagDefaultActive(menu,'/home/homePage',navigate)
     },[])
 
     let onSelect = (data: any) => {
         let {itemKey, text} = data.selectedItems[0]
-        menuStore.setMenu({
+        menuStore.setMenuActive({
             tagKey: itemKey,
             children: text,
             closable: true,
