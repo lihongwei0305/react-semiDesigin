@@ -17,7 +17,7 @@ const Header: React.FC<Props> = ({navigate}) => {
                     return <Tag
                         color={v.color}
                         key={v.tagKey}
-                        closable={true}
+                        closable={v.closable}
                         onClick={() => {
                             menuStore.setActiveMenu(v.tagKey, navigate)
                         }}

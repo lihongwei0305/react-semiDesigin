@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Nav} from '@douyinfe/semi-ui';
 import {IconUser, IconStar, IconSetting} from '@douyinfe/semi-icons';
 import s from './index.module.scss'
 import menu from "@/component/SlideBar/menu";
-import {Navigation, NavigateFunction} from "react-router-dom";
+import {Navigation, NavigateFunction, useNavigate} from "react-router-dom";
 import {observer} from 'mobx-react-lite'
 import menuStore from "@/store/menuStore";
 
@@ -13,7 +13,13 @@ interface Props {
 }
 
 
+
 const SlideBar: React.FC<Props> = ({navigate}) => {
+    useEffect(()=>{
+        menuStore.setSelectedKeys("/home/homePage")
+        menuStore.setDefaultMenu(menu,'/home/homePage',navigate)
+    },[])
+
     let onSelect = (data: any) => {
         let {itemKey, text} = data.selectedItems[0]
         menuStore.setMenu({

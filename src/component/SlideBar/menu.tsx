@@ -1,8 +1,9 @@
-import {IconInfoCircle, IconSetting, IconStar, IconUser} from "@douyinfe/semi-icons";
+import {IconHome, IconInfoCircle, IconSetting, IconStar, IconUser} from "@douyinfe/semi-icons";
 
 let menu:any = [
+    { itemKey: '/home/homePage', text: '首页', icon: <IconHome /> },
     { itemKey: '/home/user', text: '用户管理', icon: <IconUser /> },
-    { itemKey: '/union', text: '活动管理', icon: <IconStar /> },
+    { itemKey: '/home/active', text: '活动管理', icon: <IconStar /> },
     {
         text: '任务平台',
         icon: <IconSetting />,
