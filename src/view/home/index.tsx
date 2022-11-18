@@ -12,7 +12,7 @@ const Home = () => {
         <>
             <div className={s.home}>
                 <SlideBar navigate={navigate}></SlideBar>
-                <div className={s.content}>
+                <div className={[`${s.content}`, 'home_content'].join(' ')}>
                     <div className={s.content_header}>
                         <Header navigate={navigate}></Header>
                     </div>
